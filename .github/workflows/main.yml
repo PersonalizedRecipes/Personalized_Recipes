@@ -1,0 +1,11 @@
+git init;
+git config --PersonalizedRecipes.Personalized_Recipes;
+name: main.yml;
+git remote add origin https://github.com/PersonalizedRecipes/Personalized_Recipes.git;
+git add .;
+git commit -m;
+git push origin master;
+on:
+  push:
+    branches:
+    - master;
