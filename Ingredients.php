@@ -151,13 +151,26 @@
 
 
 <?php
+session_start();
 
    echo       "<form action='Choices.php' method='get' class='myform' >
          <h1>Choose available Ingredients:</h1>
-         <hr><div class='split left'>";
+         <hr><div>";
 
-include 'db.php';
-$sql = "select TypeName, IngName, catname from category, recipes, ingtype where TypeID=IngType ";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "personalizedrecipes";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error)
+{
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+$sql = "select TypeName, IngName from ingredients, ingtype where TypeID=IngType group by TypeName";
 
 
 $result=$conn->query($sql);
@@ -169,9 +182,17 @@ if ($result->num_rows> 0)
         #sql
         echo       "<h2>".$row['TypeName'].":</h2>
             <input type='checkbox' value='".$row['IngName']."' Name='".$row['IngName']."' class='myinput'>".$row['IngName']."<br>
-            </div>
-            <div class='split right'>
-            <select name='category' id='category'>";
+            </div>";}
+            }
+$sql2="select CatName from category";
+
+$result2=$conn->query($sql2);
+if ($result2->num_rows> 0)
+{
+
+    while($row = $result2->fetch_assoc())
+    {
+    echo"    <div class='split right'>   <select name='category' id='category'>";
         echo      "<option value='".$row['CatName']."'>".$row['CatName']."</option></div>";
     }
 }
