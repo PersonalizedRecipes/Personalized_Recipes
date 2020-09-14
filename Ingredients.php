@@ -23,7 +23,7 @@
                 overflow: hidden;
                 background-color: red;
                 border: 1px solid red;
-                border-radius: 8px;
+                border-radius: 50px;
                 border-width: 5px;
                 opacity: 80%;
 
@@ -103,7 +103,7 @@
             }
             .image{
                 margin-top: 300px;
-                margin-left: 90%;
+                margin-left: 80%;
                 width: 100px;
             }
             hr{
@@ -152,27 +152,36 @@
 
 <?php
 
-    include "db.php";
-
- echo       "<form action='Choices.php' method='get' class='myform' >
+   echo       "<form action='Choices.php' method='get' class='myform' >
          <h1>Choose available Ingredients:</h1>
          <hr><div class='split left'>";
-         #sql
-    echo       "<h2>protein:</h2>
-            <input type='checkbox' value='gg' Name='hh' class='myinput'><br></div>
+
+include 'db.php';
+$sql = "select TypeName, IngName, catname from category, recipes, ingtype where TypeID=IngType ";
+
+
+$result=$conn->query($sql);
+if ($result->num_rows> 0)
+{
+
+    while($row = $result->fetch_assoc())
+    {
+        #sql
+        echo       "<h2>".$row['TypeName'].":</h2>
+            <input type='checkbox' value='".$row['IngName']."' Name='".$row['IngName']."' class='myinput'>".$row['IngName']."<br>
+            </div>
             <div class='split right'>
-            <h2>Vegetable:</h2>
-            <input type='checkbox' class='myinput'></div>
-            <div class='split right'>
-            <select name='category' id='category'>
-            <option value='ggg'> jhgjg</option></div>";
+            <select name='category' id='category'>";
+        echo      "<option value='".$row['CatName']."'>".$row['CatName']."</option></div>";
+    }
+}
+else
+{
 
+}
+$conn->close();
 
-
-
-
- echo        "<input src='Nextbutton.png' type='image' align='bottom' class='image'>
-
+ echo        "<div class='split right'><input src='Nextbutton.png' type='image' align='bottom' class='image'></div>
         </form></body></html>";
 
 

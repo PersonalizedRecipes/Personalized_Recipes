@@ -219,9 +219,9 @@
          <h1>Choose a Yummy Recipe:</h1>
          <hr>
         <div class="split left radio-toolbar" ><br>
-            <input type="radio" id="first" name="recipe" value="first">
+            <input type="radio" id="" name="recipe" value="first">
             <label for="first" >first</label><br><br><br>
-            <input type="radio" id="first" name="recipe" value="first">
+            <input type="radio" id="" name="recipe" value="first">
             <label for="first" >first</label><br>
         </div>
         <div class="split right radio-toolbar" >
