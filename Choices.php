@@ -218,12 +218,17 @@
     <form action='Choice.php' method='get' class='myform' >
          <h1>Choose a Yummy Recipe:</h1>
          <hr>
-        <div class="split left radio-toolbar" ><br>
-            <input type="radio" id="" name="recipe" value="first">
-            <label for="first" >first</label><br><br><br>
-            <input type="radio" id="" name="recipe" value="first">
-            <label for="first" >first</label><br>
-        </div>
+
+        <?php 
+        echo "<div class='split left radio-toolbar' ><br>
+            <input type='radio' id='' name='recipe' value='first''>
+            <label for='first' >first</label><br><br><br>
+            <input type='radio' id='' name='recipe' value='first'>
+            <label for='first' >first</label><br>
+        </div>";
+
+        ?>
+
         <div class="split right radio-toolbar" >
             <h2 class="red"> Second Recipe</h2>
             <h2>Fourth</h2>
