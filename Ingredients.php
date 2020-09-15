@@ -86,10 +86,11 @@
             }
             .button {
 
-                float: right;
-                width: 200px;
+                margin-left: 70%;
+                margin-top: -27%;
+                width: 180px;
                 border: whitesmoke;
-                padding: 15px 32px;
+                padding: 13px 32px;
                 border-radius: 25px;
                 background-color: red;
                 font-family: Garamond;
@@ -102,8 +103,8 @@
                 background-color: #111;
             }
             .image{
-                margin-top: 300px;
-                margin-left: 80%;
+                margin-top: 3%;
+                margin-left: 90%;
                 width: 100px;
             }
             hr{
@@ -111,13 +112,12 @@
             }
             .split {
                 background-attachment: scroll;
-
                 width: 50%;
                 position: fixed;
-                z-index: 1;
                 overflow-x: hidden;
                 text-align: center;
             }
+
             .right{
                 right:0;
             }
@@ -170,7 +170,7 @@ if ($conn->connect_error)
 }
 
 
-$sql = "select TypeName, IngName from ingredients, ingtype where TypeID=IngType group by TypeName";
+$sql = "select TypeName,ingName from ingredients,ingtype where TypeID=ingType group by TypeName ";
 
 
 $result=$conn->query($sql);
@@ -181,28 +181,26 @@ if ($result->num_rows> 0)
     {
         #sql
         echo       "<h2>".$row['TypeName'].":</h2>
-            <input type='checkbox' value='".$row['IngName']."' Name='".$row['IngName']."' class='myinput'>".$row['IngName']."<br>
+            <input type='checkbox' value='".$row['ingName'].". Name='".$row['ingName']."' class='myinput'>".$row['ingName']."<br>
             </div>";}
             }
+
 $sql2="select CatName from category";
 
 $result2=$conn->query($sql2);
 if ($result2->num_rows> 0)
 {
 
+    echo '<select id="category" class="button">';
     while($row = $result2->fetch_assoc())
     {
-    echo"    <div class='split right'>   <select name='category' id='category'>";
-        echo      "<option value='".$row['CatName']."'>".$row['CatName']."</option></div>";
+        echo  "<option value='".$row['CatName']."'>".$row['CatName']."</option>";
     }
-}
-else
-{
-
+    echo "</select>";
 }
 $conn->close();
 
- echo        "<div class='split right'><input src='Nextbutton.png' type='image' align='bottom' class='image'></div>
+ echo        "<div><input src='Nextbutton.png' type='image' align='bottom' class='image'></div>
         </form></body></html>";
 
 
