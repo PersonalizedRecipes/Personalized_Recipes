@@ -94,41 +94,24 @@
             position: center;
             margin-left: 20px;
             background-size: 500px;
-            margin-top: 20px;
+            margin-top: 50%;
             opacity: 70%;
         }
 
-        .radio-toolbar input[type="radio"]:hover{
-            color: whitesmoke;
-
-            overflow: hidden;
-            font-family: Garamond;
-            font-size: 25px;
-            background-color: gray ;
-            border-radius: 25px;
-            padding: 20px 100px;
-            text-align: center;
-            width: 550px;
-            position: center;
-            margin-left: 35px;
-            background-size: 500px;
-            margin-top: 30%;
-            opacity: 70%;
-        }
         .radio-toolbar input[type="radio"]:checked+label {
-            color: whitesmoke;
-            overflow: auto;
+            color: white;
+            overflow: hidden;
             font-family: Garamond;
             font-size: 25px;
             background-color: red ;
             border-radius: 25px;
-            padding: 10px 10px;
+            padding: 10px 265px;
             text-align: center;
             width: 550px;
             position: center;
-            margin-left: 35px;
+            margin-left: 20px;
             background-size: 500px;
-            margin-top: 0;
+            margin-top: 50%;
             opacity: 70%;
         }
 
@@ -153,6 +136,7 @@
             color: whitesmoke;
             font-size: 20px;
             opacity: 70%;
+            margin-top: 10%;
 
         }
         li a:hover {
@@ -215,31 +199,53 @@
     <li><a href="contactUs.php"  class='a1'>Contact us</a></li>
 
 </ul>
-    <form action='Choice.php' method='get' class='myform' >
-         <h1>Choose a Yummy Recipe:</h1>
-         <hr>
+<form action='recipes.php' method='get' class='myform' >
+    <h1>Choose a Yummy Recipe:</h1>
+    <hr>
 
-        <?php 
-        echo "<div class='split left radio-toolbar' ><br>
-            <input type='radio' id='' name='recipe' value='first''>
-            <label for='first' >first</label><br><br><br>
-            <input type='radio' id='' name='recipe' value='first'>
-            <label for='first' >first</label><br>
-        </div>";
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "personalizedrecipes";
 
-        ?>
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-        <div class="split right radio-toolbar" >
-            <h2 class="red"> Second Recipe</h2>
-            <h2>Fourth</h2>
-        </div>
+if ($conn->connect_error)
+{
+    die("Connection failed: " . $conn->connect_error);
+}
+    $sql="select RecName from ingredients,ingforrecipe,recipes,ingType,temp where ingID=ingredientsID and RecID=RecipeID and ingType=TypeID";
+$result=$conn->query($sql);
+if ($result->num_rows> 0)
+{
+
+    while($row = $result->fetch_assoc())
+    {
+        $i=1;
+        if($i==1){
+  echo  "<div class='split left radio-toolbar' >
+        <br><br>
+        <input type='radio' id='". $row['RecName']. "' name='recipe' value=". $row['RecName']. ">
+        <label for=". $row['RecName']. " >". $row['RecName']. "</label><br><br><br>";
+  $i=2;
+        }
+        else{
 
 
 
+  echo "  </div>
+    <div class='split right radio-toolbar' >
+        <br><br>
+        <input type='radio' id=". $row['RecName']. " name='recipe' value=". $row['RecName']. ">
+        <label for=". $row['RecName']. " >". $row['RecName']. "</label><br><br><br>
+     
+ ";
+        $i=1;}}}
+ echo      "<input type='submit' value='Next' name='Next' class='button' align='bottom'>
+    </div></form></body></html>";
 
 
-<input src='Nextbutton.png' type='image' align='bottom' class='image'>
-        </form></body></html>";
 
 
 

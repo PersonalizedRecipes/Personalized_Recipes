@@ -191,7 +191,7 @@ if ($conn->connect_error)
 {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connection successful";
+
     $sql= "select * from recipes,ingredients,stepsforrecipe where RecName=$r ";
 
 

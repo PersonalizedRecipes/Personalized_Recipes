@@ -1,0 +1,338 @@
+@charset "utf-8";
+	.NormalCharacterStyle4
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+	.NormalCharacterStyle2
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle1
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle
+{
+	font-family : Helvetica;
+	font-size : 28px;
+	letter-spacing : 0.62px;
+	color : #f23535;
+	color : rgb(242, 53, 53);
+}
+.NormalCharacterStyle3
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle5
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.st0
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.st1
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.st2
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.st3
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.st4
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.st5
+{
+	background : #FFFFFF;
+	background : rgba(255, 255, 255, 1);
+}
+.st6
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.st7
+{
+	background : #FFFFFF;
+	background : rgba(255, 255, 255, 1);
+}
+.st8
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.st9
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.st10
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.st11
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.image7
+{
+	background-image : url(image7.png);
+	background-repeat : no-repeat;
+}
+.image5
+{
+	background-image : url(image5.png);
+	background-repeat : no-repeat;
+}
+.st12
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.st13
+{
+	border-style : Solid;
+	border-color : #F23535;
+	border-color : rgba(242, 53, 53, 1);
+	border-width : 0px;
+}
+.st14
+{
+	border-style : Solid;
+	border-color : #F23535;
+	border-color : rgba(242, 53, 53, 1);
+	border-width : 0px;
+}
+.image3
+{
+	background-image : url(image3.png);
+	background-repeat : no-repeat;
+}
+.image1
+{
+	background-image : url(image1.png);
+	background-repeat : no-repeat;
+}
+.image2
+{
+	background-image : url(image2.png);
+	background-repeat : no-repeat;
+}
+.st15
+{
+	background : #F23535;
+	background : rgba(242, 53, 53, 1);
+}
+.image6
+{
+	background-image : url(image6.png);
+	background-repeat : no-repeat;
+}
+.image4
+{
+	background-image : url(image4.png);
+	background-repeat : no-repeat;
+}
+.image
+{
+	background-image : url(image.png);
+	background-repeat : no-repeat;
+}
+.NormalCharacterStyle7
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle6
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle21
+{
+	font-family : Helvetica;
+	font-size : 28px;
+	letter-spacing : 0.62px;
+	color : #F23535;
+	color : rgb(242, 53, 53);
+}
+.NormalCharacterStyle20
+{
+	font-family : Helvetica;
+	font-size : 28px;
+	letter-spacing : 0.62px;
+	color : #F23535;
+	color : rgb(242, 53, 53);
+}
+.NormalCharacterStyle19
+{
+	font-family : Helvetica;
+	font-size : 28px;
+	letter-spacing : 0.62px;
+	color : #F23535;
+	color : rgb(242, 53, 53);
+}
+.NormalCharacterStyle18
+{
+	font-family : Helvetica;
+	font-size : 25px;
+	letter-spacing : 0.55px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle24
+{
+	font-family : LAROSH Sithal Signature;
+	font-size : 10px;
+	color : #FFFFFF;
+	color : rgb(255, 255, 255);
+	text-outline : #FFFFFF;
+	text-outline : rgb(255, 255, 255);
+}
+.NormalCharacterStyle11
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle9
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle8
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle22
+{
+	font-family : Helvetica;
+	font-size : 35px;
+	line-height : 57px;
+	letter-spacing : 0.77px;
+	color : #F23535;
+	color : rgb(242, 53, 53);
+}
+.NormalCharacterStyle12
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle17
+{
+	font-family : Helvetica;
+	font-size : 25px;
+	letter-spacing : 0.55px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle16
+{
+	font-family : Helvetica;
+	font-size : 25px;
+	letter-spacing : 0.55px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle15
+{
+	font-family : Helvetica;
+	font-size : 25px;
+	letter-spacing : 0.55px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle14
+{
+	font-family : Helvetica;
+	font-size : 28px;
+	letter-spacing : 0.62px;
+	color : #F23535;
+	color : rgb(242, 53, 53);
+}
+.NormalCharacterStyle13
+{
+	font-family : Helvetica;
+	font-size : 28px;
+	letter-spacing : 0.62px;
+	color : #F23535;
+	color : rgb(242, 53, 53);
+}
+.NormalCharacterStyle10
+{
+	font-family : Helvetica;
+	font-size : 15px;
+	line-height : 57px;
+	letter-spacing : 0.33px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
+.NormalCharacterStyle23
+{
+	font-family : Helvetica;
+	font-size : 20px;
+	color : #FFFFFF;
+	color : rgb(255, 255, 255);
+}
