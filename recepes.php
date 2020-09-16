@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(  isset($_GET['recipe'])) {
+$r = $_GET['recipe'];
+
+
+?>
 <html lang="jj">
 
 <head>
@@ -7,7 +14,7 @@
         body{
             background-color: whitesmoke;
             background-image: url("bg.jpg");
-            background-attachment: fixed;
+            background-attachment: scroll;
             background-position: center;
             background-repeat: no-repeat;
             background-size:cover;
@@ -176,42 +183,34 @@
 
 
     <?php
+    include 'db.php';
 
-    echo "<div class='split left radio-toolbar' >
-
-        <h1 >Recipe Name:"/*sql */."</h1>
-        </div><br><br><br><hr>
+    echo "<h1 >Recipe Name:" . $r . "</h1><hr>
    <div class='split left radio-toolbar' >
    <h2>Ingredients</h2>
-     
-   
-<div class='split left'>
-<input type='checkbox' value='".""        ."' Name='".  ""      ."' class='myinput'".""      ."<a href='www.google.com'> Link</a><br></div>
+<input type='checkbox' value='" . "" . "' Name='" . "" . "' class='myinput'" . "" . "<a href='www.google.com'> Link</a><br>
 
- <br><br><br><hr><h2>Directions:</h2>
-<p class='split left'>hiii"/*paragraph from sql */."</p>
+ <br><br><br>
+ <h2>Directions:</h2>
+<p class='split left'>hiii"/*paragraph from sql */ . "</p> 
+<br><br><h2>Note:"/*sql */ . "</h2> 
+<br><br><br><h2>Time Taken:</h2>
 </div>
-<div class='split right radio-toolbar' >
+<div class='split right radio-toolbar'>
  
-   
-   <br><br><br><hr><h2>Note:"/*sql */."</h2>
-    
-   
-<div class='split right'>
-
- <br><br><br><hr><h2>Time Taken:</h2>
-<p class='split right'>hiii"/*time taken from sql */."</p>
+ <h2>For More Ingredients"/*sql */ . "</h2>
+ <div align='left'>
+<a href='https://cozmo.jo/fruits-vegetables/african-lemons.html'>Click here</a>
 </div>
     
     </div>
 <form action='Ingredients.php' method='get'>
         <input type='submit' value='Next' class='button'>
-    </form>
+    </form>";
 
-
-"
-
-
+}
+    else
+        header("Location: ingredients.php");
     ?>
 
 </body></html>
