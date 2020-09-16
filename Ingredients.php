@@ -87,7 +87,7 @@
             .button {
 
                 margin-left: 70%;
-                margin-top: -27%;
+                margin-top: -10%;
                 width: 180px;
                 border: whitesmoke;
                 padding: 13px 32px;
@@ -99,11 +99,12 @@
                 opacity: 70%;
 
             }
+
             li a:hover {
                 background-color: #111;
             }
             .image{
-                margin-top: 3%;
+                margin-top: 10%;
                 margin-left: 90%;
                 width: 100px;
             }
@@ -155,7 +156,24 @@ session_start();
 
    echo       "<form action='Choices.php' method='get' class='myform' >
          <h1>Choose available Ingredients:</h1>
-         <hr><div>";
+         <hr><div>
+         <div style='    width: 180px;
+                border: whitesmoke;
+                padding: 13px 32px;
+                border-radius: 25px;
+                background-color: red;
+                font-family: Garamond;
+                color: whitesmoke;
+                font-size: 20px;
+                opacity: 70%;
+'>
+<label for='userName'><p>User Name</p></label><input type='text' name='userName' placeholder='Enter UserName' required>
+
+
+</div>
+
+       
+         ";
 
 $servername = "localhost";
 $username = "root";
@@ -170,19 +188,20 @@ if ($conn->connect_error)
 }
 
 
-$sql = "select TypeName,ingName from ingredients,ingtype where TypeID=ingType group by TypeName ";
+$sql = "select ingName from ingredients ";
 
 
 $result=$conn->query($sql);
 if ($result->num_rows> 0)
 {
 
-    while($row = $result->fetch_assoc())
+    }    while($row = $result->fetch_assoc())
     {
         #sql
-        echo       "<h2>".$row['TypeName'].":</h2>
-            <input type='checkbox' value='".$row['ingName'].". Name='".$row['ingName']."' class='myinput'>".$row['ingName']."<br>
-            </div>";}
+
+
+        echo "<input type='checkbox' value='".$row['ingName']."'. Name='ingredients[]' class='myinput' id='".$row['ingName']."'>".$row['ingName']."<br>
+            </div>";
             }
 
 $sql2="select CatName from category";
@@ -202,6 +221,5 @@ $conn->close();
 
  echo        "<div><input src='Nextbutton.png' type='image' align='bottom' class='image'></div>
         </form></body></html>";
-
 
 
