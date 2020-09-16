@@ -86,7 +86,7 @@
             }
             .button {
 
-                margin-left: 70%;
+                margin-left: 68%;
                 margin-top: -10%;
                 width: 180px;
                 border: whitesmoke;
@@ -157,15 +157,20 @@ session_start();
    echo       "<form action='Choices.php' method='get' class='myform' >
          <h1>Choose available Ingredients:</h1>
          <hr><div>
-         <div style='    width: 180px;
-                border: whitesmoke;
-                padding: 13px 32px;
-                border-radius: 25px;
-                background-color: red;
+         <div style='  color: gray;
+                overflow: hidden;
                 font-family: Garamond;
-                color: whitesmoke;
-                font-size: 20px;
-                opacity: 70%;
+                font-size: 25px;
+                
+                border-radius: 25px;
+                padding: -10% -5%;
+                text-align: center;
+                width: 550px;
+                position: center;
+                margin-left: 54%;
+                background-size: 200px;
+                margin-top: 0;
+                opacity: 60%; 
 '>
 <label for='userName'><p>User Name</p></label><input type='text' name='userName' placeholder='Enter UserName' required>
 
@@ -210,10 +215,10 @@ $result2=$conn->query($sql2);
 if ($result2->num_rows> 0)
 {
 
-    echo '<select id="category" class="button">';
+    echo '<select  id="category" class="button">';
     while($row = $result2->fetch_assoc())
     {
-        echo  "<option value='".$row['CatName']."'>".$row['CatName']."</option>";
+        echo  "<option name='".$row['CatName']."' value='".$row['CatName']."'>".$row['CatName']."</option>";
     }
     echo "</select>";
 }
