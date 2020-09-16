@@ -1,11 +1,20 @@
-<html>
+<?php
+session_start();
+if(  isset($_GET['recipe'])) {
+$r = $_GET['recipe'];
+
+
+?>
+<html lang="jj">
+
 <head>
-    <title>Ingredients</title>
+    <title>Choices</title>
+
     <style>
         body{
             background-color: whitesmoke;
             background-image: url("bg.jpg");
-            background-attachment: fixed;
+            background-attachment: scroll;
             background-position: center;
             background-repeat: no-repeat;
             background-size:cover;
@@ -21,7 +30,7 @@
             overflow: hidden;
             background-color: red;
             border: 1px solid red;
-            border-radius: 50px;
+            border-radius: 100px;
             border-width: 5px;
             opacity: 80%;
 
@@ -49,6 +58,7 @@
 
 
         h1{
+
             color: red;
             font-family: Garamond;
             font-size: 30px;
@@ -70,10 +80,7 @@
             background-size: 200px;
             margin-top: 0;
             opacity: 70%;
-
         }
-
-
         .logo{
 
             margin: 10px;
@@ -83,12 +90,12 @@
 
         }
         .button {
-
-            margin-left: 70%;
-            margin-top: -10%;
-            width: 180px;
+            margin-top: 35%;
+            margin-left: 90%;
+            float: right;
+            width: 200px;
             border: whitesmoke;
-            padding: 13px 32px;
+            padding: 15px 32px;
             border-radius: 25px;
             background-color: red;
             font-family: Garamond;
@@ -97,12 +104,11 @@
             opacity: 70%;
 
         }
-
         li a:hover {
             background-color: #111;
         }
         .image{
-            margin-top: 10%;
+            margin-top: 35%;
             margin-left: 90%;
             width: 100px;
         }
@@ -111,12 +117,14 @@
         }
         .split {
             background-attachment: scroll;
+            height: 100%;
+
             width: 50%;
             position: fixed;
+            z-index: 1;
             overflow-x: hidden;
             text-align: center;
         }
-
         .right{
             right:0;
         }
@@ -135,41 +143,43 @@
             background-size: 500px;
             border-radius: 2px;
         }
+        .bg{
+            background-color: whitesmoke;
+            opacity: 60%;
+            border-radius: 25px;
+            position: center;
+            margin-top: 70px;
+        }
+        a{
+            color:red;
+        }
+        myinput[type="checkbox"]:checked:after{
+            position: relative;
+            display: block;
+            border-width: 6px;
+            border-style: solid;
+            content: "";
+            border-color: red;
+            background-color: red;
+            background-position: center;
+            background-size: 500px;
+            border-radius: 2px;
+
+        }
 
     </style>
 </head>
 <body>
 <ul class ="ul1" >
     <li class="logo" ><img src="logo2.jpg"></li>
-    <li ><a href="page%201.html">Home</a></li>
+    <li ><a href="page%201.html"  class='a1'>Home</a></li>
 
-    <li><a href="contactUs.php">Contact us</a></li>
+    <li><a href="contactUs.php"  class='a1'>Contact us</a></li>
 
 </ul>
+<form>
 
-
-
-<?php
-session_start();
-
-echo       "<form action='Choices.php' method='get' class='myform' >
-         <h1>Choose available Ingredients:</h1>
-         <hr><div>
-         <div style='    width: 180px;
-                border: whitesmoke;
-                padding: 13px 32px;
-                border-radius: 25px;
-                background-color: red;
-                font-family: Garamond;
-                color: whitesmoke;
-                font-size: 20px;
-                opacity: 70%;
-'>
-<label for='userName'><p>User Name</p></label><input type='text' name='userName' placeholder='Enter UserName' required>
-</div>
-       
-         ";
-
+    <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -181,37 +191,48 @@ if ($conn->connect_error)
 {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql="select IngName,TypeName from ingredients, ingType where ingType=TypeID group by TypeName";
+echo "Connection successful";
+    $sql= "select * from recipes,ingredients,stepsforrecipe where RecName=$r ";
+
+
+
+    echo "<h1 >Recipe Name:" . $r . "</h1><hr>
+   <div class='split left radio-toolbar' >
+   <h2>Ingredients</h2>";
+
 $result=$conn->query($sql);
 if ($result->num_rows> 0)
 {
-    while($row = $result->fetch_assoc())
 
-{ echo "<h2>".$row['TypeName']."</h2>
-<input type='checkbox' value='".$row['IngName']."' Name='ingredients' class='myinput' id='".$row['IngName']."'>".$row['IngName']."<br>
-            </div>";
-    if (isset($row['ingName']))
-    {
-        foreach ($row['ingName'] as $value){
-            $sql="insert into temp values ('".$value."')";
-        }
-    };
-}}
-
-$sql="select CatName from category";
-
-$result2=$conn->query($sql);
-if ($result2->num_rows> 0)
+  while($row = $result->fetch_assoc())
 {
+echo "<input type='checkbox' value='" . $row['ingName'] . "' " . "' class='myinput'" . $row['ingName'] . "><br>
 
-    echo '<select id="category" class="button">';
-    while($row = $result2->fetch_assoc())
-    {
-        echo  "<option value='".$row['CatName']."'>".$row['CatName']."</option>";
-    }
-    echo "</select>";
-}
-$conn->close();
+ <br><br><br>
+ <h2>Preparation:</h2>
+<p class='split left'>". $row['prepare']. "</p> 
+<br><br><br><h2>Directions:</h2>
+<p class='split left'>". $row['cook']. "</p> 
+<br><br><h2>Note:</h2> 
+<p>".$row['notes']."</p>
+<br><br><br><h2>Time Taken:</h2>
+<p>".$row['timeTaken']."</p>
+</div>
+<div class='split right radio-toolbar'>
+ 
+ <h2>For More Ingredients</h2>
+ <div align='center'>
+<a href='".$row['IngLink']."'>Click here</a>
+</div>
+    
+    </div>
+";
 
-echo        "<div><input src='Nextbutton.png' type='image' align='bottom' class='image'></div>
-        </form></body></html>";
+}}}
+    else
+        header("Location: Choices.php");
+
+
+    ?>
+
+</body></html>
